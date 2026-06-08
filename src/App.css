@@ -1,0 +1,77 @@
+.overall-result {
+  background: linear-gradient(var(--light-slate-blue-bg), var(--light-royal-blue-bg));
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  color: var(--white);
+  padding: 3em;
+  border-radius: 0 0 32px 32px;
+}
+.result-title,
+.total-points,
+.result-txt-content {
+  color: var(--light-lavender-400);
+}
+.main-score {
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  padding: 1em;
+  background: linear-gradient(var(--violet-blue-circ), var(--persian-blue-circ));
+}
+.score-value {
+  font-weight: 800;
+  font-size: 2rem;
+}
+.result-summary {
+  display: grid;
+  gap: 1em;
+  padding: 1em;
+  color: var(--dark-gray-blue);
+  font-weight: 600;
+}
+.criteria {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: rgb(from var(--theme-color) r g b / 0.1);
+  border-radius: 16px;
+  > * {
+    display: flex;
+    gap: 1em;
+  }
+  .criteria-name {
+    color: var(--theme-color);
+  }
+}
+.criteria-red {
+  --theme-color: var(--light-red);
+}
+.criteria-yellow {
+  --theme-color: var(--orangey-yellow);
+}
+.criteria-green {
+  --theme-color: var(--green-teal);
+}
+.criteria-blue {
+  --theme-color: var(--cobalt-blue);
+}
+.criteria-total-points {
+  color: var(--gray);
+}
+.criteria-icon {
+  height: 1lh;
+  align-self: center;
+}
+.continue-btn {
+  background-color: var(--dark-gray-blue);
+  color: var(--white);
+  padding: 1em 1em;
+  border-radius: 100vw;
+  border: none;
+  align-self: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-block: 1em;
+}
+
