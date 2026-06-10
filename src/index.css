@@ -34,3 +34,6 @@ img {
 * {
   box-sizing: border-box;
 }
+p {
+  max-width: 50ch;
+}

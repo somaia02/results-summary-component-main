@@ -6,10 +6,10 @@ import visualIcon from './assets/images/icon-visual.svg'
 
 export default function Results() {
   return (
-    <>
+    <div className="app">
       <OverallResult />
       <ResultSummary />
-    </>
+    </div>
   )
 }
 
