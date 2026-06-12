@@ -1,15 +1,15 @@
 import './App.css'
-import reactionIcon from './assets/images/icon-reaction.svg'
-import memoryIcon from './assets/images/icon-memory.svg'
-import verbalIcon from './assets/images/icon-verbal.svg'
-import visualIcon from './assets/images/icon-visual.svg'
+import DataProvider, { useData } from './dataProvider'
+
 
 export default function Results() {
   return (
-    <div className="app">
-      <OverallResult />
-      <ResultSummary />
-    </div>
+    <DataProvider>
+      <div className="app">
+        <OverallResult />
+        <ResultSummary />
+      </div>
+    </DataProvider>
   )
 }
 
@@ -39,13 +39,18 @@ function ResultText() {
   );
 }
 function ResultSummary() {
+  const data = useData();
+  if (!data) return;
+  const criteria = []
+  for (const item of data) {
+    criteria.push(
+      <Criteria key={item.category} name={item.category} icon={item.icon} color={item.color} score={item.score} />
+    )
+  }
   return (
     <div className="result-summary">
       <h2>Summary</h2>
-      <Criteria name='Reaction' icon={reactionIcon} color='red' score='80' />
-      <Criteria name='Memory' icon={memoryIcon} color='yellow' score='92' />
-      <Criteria name='Verbal' icon={verbalIcon} color='green' score='61' />
-      <Criteria name='Visual' icon={visualIcon} color='blue' score='73' />
+      {criteria}
       <button className="continue-btn">Continue</button>
     </div>
   );
