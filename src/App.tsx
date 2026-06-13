@@ -37,7 +37,7 @@ function ResultText() {
   );
 }
 function ResultSummary() {
-  const data = useData('../data.json');
+  const data = useData(import.meta.env.BASE_URL + 'data.json');
   if (!data) return;
   const criteria = []
   for (const item of data) {
@@ -57,7 +57,7 @@ function Criteria({ name, icon, color, score }: { name: string, icon: string, co
   return (
     <div className={`criteria criteria-${color}`}>
       <div>
-        <img src={icon} alt="" className='criteria-icon'/>
+        <img src={import.meta.env.BASE_URL + icon} alt="" className='criteria-icon'/>
         <p className='criteria-name'>{name}</p>
       </div>
       <p>
