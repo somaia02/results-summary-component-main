@@ -1,15 +1,13 @@
 import './App.css'
-import DataProvider, { useData } from './dataProvider'
+import useData from './useData'
 
 
 export default function Results() {
   return (
-    <DataProvider>
-      <div className="app">
-        <OverallResult />
-        <ResultSummary />
-      </div>
-    </DataProvider>
+    <div className="app">
+      <OverallResult />
+      <ResultSummary />
+    </div>
   )
 }
 
@@ -39,7 +37,7 @@ function ResultText() {
   );
 }
 function ResultSummary() {
-  const data = useData();
+  const data = useData('../data.json');
   if (!data) return;
   const criteria = []
   for (const item of data) {

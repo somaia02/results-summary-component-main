@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 
-export default function useDataFetch(url: string) {
-  const [data, setData] = useState(null);
+interface Data {
+  category: string,
+  score: string,
+  icon: string,
+  color: string
+};
+
+
+export default function useData(url: string) {
+  const [data, setData] = useState<Data[] | null>(null);
   useEffect(() => {
     let ignore = false;
     if (url) {
